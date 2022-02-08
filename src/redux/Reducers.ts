@@ -1,10 +1,13 @@
+import { combineReducers } from "@reduxjs/toolkit";
 import { AnyAction } from "redux";
 import { EmployeeState } from "../contract/StoreState";
 import { LIST_EMPLOYEE_START, LIST_EMPLOYEE_SUCCESS } from "./Actions";
-import { initStoreState } from "./Store";
 
-export const employeeReducer = (
-  state: EmployeeState = initStoreState.employee,
+const employeeReducer = (
+  state: EmployeeState = {
+    isLoading: false,
+    employees: undefined,
+  },
   action: AnyAction
 ): EmployeeState => {
   console.log(action);
@@ -21,8 +24,8 @@ export const employeeReducer = (
       };
 
     default:
-      break;
+      return state;
   }
-
-  return state;
 };
+
+export const reducers = combineReducers({ employee: employeeReducer });

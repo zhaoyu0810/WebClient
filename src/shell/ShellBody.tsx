@@ -2,7 +2,7 @@ import React from "react";
 import { Layout } from "antd";
 import { Menu } from "antd";
 import { Link, Route, Switch } from "react-router-dom";
-import { Page1 } from "../pages/Page1";
+import { Page1Container } from "../pages/page1/";
 const { Content, Sider } = Layout;
 
 export const ShellLeftNav = () => (
@@ -32,7 +32,7 @@ export const ShellBody = () => {
         <Content style={{ padding: "0 24px", minHeight: 500 }}>
           <Switch>
             <Route path={"/page-1"}>
-              <Page1 />
+              <Page1Container />
             </Route>
             <Route path={"/page-2"}>2</Route>
             <Route path={""}>

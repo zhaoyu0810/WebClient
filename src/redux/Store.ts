@@ -1,13 +1,8 @@
-import {
-  applyMiddleware,
-  combineReducers,
-  createStore,
-  Store,
-} from "@reduxjs/toolkit";
+import { applyMiddleware, createStore, Store } from "@reduxjs/toolkit";
 import createSagaMiddleware from "redux-saga";
 import { StoreState } from "../contract/";
 import { getSaga } from "./Saga";
-import { employeeReducer } from "./EmployeeReducer";
+import { reducers } from "./Reducers";
 
 export const initStoreState: StoreState = {
   employee: {
@@ -17,11 +12,8 @@ export const initStoreState: StoreState = {
 };
 
 export const createAppStore = (): Store<StoreState> => {
-  const reducer = combineReducers(employeeReducer);
-
   const sagaMiddleware = createSagaMiddleware();
-  const store = createStore(reducer, applyMiddleware(sagaMiddleware));
+  const store = createStore(reducers, applyMiddleware(sagaMiddleware));
   sagaMiddleware.run(getSaga());
-
   return store as Store<StoreState>;
 };

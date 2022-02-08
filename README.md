@@ -7,7 +7,6 @@
 ## State management
 - Redux
 - Redux-Saga
-- Isomorphic Fetch 
 
 ## Build
 - Webpack
@@ -16,7 +15,7 @@
 - React Router
 
 ## Code quality
-- Eslint & Tslints
+- Eslint
 
 ## Testing
 - Jest
