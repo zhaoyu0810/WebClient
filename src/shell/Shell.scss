@@ -1,0 +1,27 @@
+.Shell {
+    height: 100%;
+    .ShellHeader {
+        background-color: #2673DD;
+        display: flex;
+        justify-content: space-between;
+
+         .ant-space {
+            color: #fff;
+            svg, h1, a, span {
+                color: #fff;
+            }
+            h1 {
+                font-size: 18px;
+                margin-bottom: 0;
+            }
+            svg {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+
+    .ant-layout-has-sider, aside {
+        height: 100%;
+    }
+}

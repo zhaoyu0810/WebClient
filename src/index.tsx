@@ -1,10 +1,5 @@
-import React, { memo } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
+import { App } from "./App";
 
-const Platform = memo(() => {
-  return <h1>Hello 2</h1>;
-});
-
-Platform.displayName = "Platform";
-
-ReactDOM.render(<Platform />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById("root"));
